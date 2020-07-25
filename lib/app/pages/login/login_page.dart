@@ -23,19 +23,6 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(
           title: Text("Entrar"),
           centerTitle: true,
-          actions: <Widget>[
-            FlatButton(
-              child: Text(
-                "CRIAR CONTA",
-                style: TextStyle(fontSize: 15.0),
-              ),
-              textColor: Colors.white,
-              onPressed: () {
-                // Navigator.of(context).pushReplacement(
-                //     MaterialPageRoute(builder: (context) => SignUpScreen()));
-              },
-            )
-          ],
         ),
         body: Observer(
           builder: (_) {
@@ -128,7 +115,11 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _onSuccess() {
-    Navigator.of(context).pop();
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Logado som sucess"),
+      backgroundColor: Colors.greenAccent,
+      duration: Duration(seconds: 2),
+    ));
   }
 
   void _onFail() {
