@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
-import 'pages/home/home_page.dart';
-
-class MyApp extends StatelessWidget {
+class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Com sabor',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(title: 'Flutter Demo Home Page'),
+          primarySwatch: Colors.blue,
+          primaryColor: Colors.black,
+          backgroundColor: Color.fromARGB(175, 176, 170, 118)),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      onGenerateRoute: Modular.generateRoute,
+      navigatorKey: Modular.navigatorKey,
     );
   }
 }
