@@ -14,9 +14,10 @@ class AppModule extends MainModule {
     return [
       // Auth
       Bind((i) => AuthController(i.get<AuthStore>()), lazy: false),
-      Bind((i) => AuthStore(i.get<IAuthRepository>())),
+      Bind((i) => AuthStore(i.get<IAuthRepository>()), lazy: false),
       Bind<IAuthRepository>(
-          (i) => AuthRepositoryFirebase(FirebaseAuth.instance)),
+          (i) => AuthRepositoryFirebase(FirebaseAuth.instance),
+          lazy: false),
     ];
   }
 
