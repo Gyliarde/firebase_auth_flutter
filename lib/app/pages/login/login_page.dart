@@ -36,6 +36,12 @@ class _LoginPageState extends State<LoginPage> {
               child: ListView(
                 padding: EdgeInsets.all(16.0),
                 children: <Widget>[
+                  authController.isLoggedIn()
+                      ? Text("Usuario LOGADO : ${authController.userName} ")
+                      : Text("Nenhum usuario LOGADO  "),
+                  SizedBox(
+                    height: 16.0,
+                  ),
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(hintText: "E-mail"),
@@ -104,6 +110,25 @@ class _LoginPageState extends State<LoginPage> {
                             pass: _passController.text,
                             onSuccess: _onSuccess,
                             onFail: _onFail);
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16.0,
+                  ),
+                  SizedBox(
+                    height: 44.0,
+                    child: RaisedButton(
+                      child: Text(
+                        "Sair",
+                        style: TextStyle(
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      textColor: Colors.white,
+                      color: Theme.of(context).primaryColor,
+                      onPressed: () {
+                        authController.signOut();
                       },
                     ),
                   ),

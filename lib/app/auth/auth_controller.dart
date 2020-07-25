@@ -10,6 +10,8 @@ class AuthController {
     return auth != null && auth.user != null;
   }
 
+  get userName => auth.user.email;
+
   signIn(
           {@required String email,
           @required String pass,
