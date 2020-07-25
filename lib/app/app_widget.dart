@@ -1,5 +1,6 @@
-import 'package:firebase_auth_mobx/app/home/home_page.dart';
 import 'package:flutter/material.dart';
+
+import 'pages/home/home_page.dart';
 
 class MyApp extends StatelessWidget {
   @override

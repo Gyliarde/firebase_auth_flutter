@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_mobx/app/interfaces/auth_repository_interface.dart';
+import 'package:firebase_auth_mobx/app/auth/auth_repository_interface.dart';
 
 class AuthRepositoryFirebase implements IAuthRepository {
   final FirebaseAuth auth;
